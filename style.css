@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body{
+    transition: all .3s ease;
+}
+
+.lm{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: #f8f8f8;
+    
+}
+
+.dm{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: #1d1d1d;
+    ::placeholder {
+        color: white;
+        opacity: 1; /* Firefox */
+    }
+}
+
+.navbar{
+    background: white;
+}
+
+.logoText{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.blue{
+    color: rgb(88, 88, 255);
+}
+
+.container{
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+}
+
+input{
+    padding: 5px 10px;
+    border: 1px solid rgb(88, 88, 255);
+}
+
+input:focus{
+    outline: none !important;
+}
+
+#passBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.passDiv{
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2vh 0vw;
+    border: 1px solid rgba(75, 75, 75, 0.644);
+    border-top: none;
+}
+
+#labels{
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2vh 0vw;
+    font-size: 1.1em;
+    border: 1px solid rgba(75, 75, 75, 0.644);
+    box-shadow: 0px 0.4px 2px grey;
+}
