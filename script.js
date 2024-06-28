@@ -27,12 +27,12 @@ switche.addEventListener("click", function () {
 
         darkMode = true;
     }
-    else{
+    else {
         navbar.classList.remove("bg-dark");
 
         document.body.classList.remove("text-white", "dm");
         document.body.classList.add("lm");
-        
+
         userName.classList.remove("text-white", "dm");
         pass.classList.remove("text-white", "dm");
         web.classList.remove("text-white", "dm");
@@ -41,46 +41,58 @@ switche.addEventListener("click", function () {
     };
 });
 
-submit.addEventListener("click", ()=>{
+submit.addEventListener("click", () => {
     if (userName.value && pass.value && web.value) {
         let nameValue = userName.value;
         let passValue = pass.value;
-        let webValue= web.value
-        // localStorage.setItem(nameValue, passValue);
-        // localStorage.setItem("webValue", webValue);
+        let webValue = web.value;
 
-        let passDiv = document.createElement("div");
-        let userNameBox = document.createElement("div");
-        let passwordBox = document.createElement("div");
-        let webBox = document.createElement("div");
+        if (webValue.startsWith("www.") == true) {
+            let passDiv = document.createElement("div");
+            let userNameBox = document.createElement("div");
+            let passwordBox = document.createElement("div");
+            let webBox = document.createElement("div");
 
-        passDiv.classList.add("passDiv");
+            passDiv.classList.add("passDiv");
 
-        userNameBox.innerHTML = nameValue;
-        passwordBox.innerHTML = passValue;
-        webBox.innerHTML = webValue;
+            userNameBox.innerHTML = nameValue;
+            passwordBox.innerHTML = passValue;
+            webBox.innerHTML = webValue;
 
-        passBox.appendChild(passWords);
-        passWords.appendChild(passDiv);
-        passDiv.appendChild(userNameBox);
-        passDiv.appendChild(passwordBox);
-        passDiv.appendChild(webBox);
+            passBox.appendChild(passWords);
+            passWords.appendChild(passDiv);
+            passDiv.appendChild(userNameBox);
+            passDiv.appendChild(passwordBox);
+            passDiv.appendChild(webBox);
 
-        localStorage.setItem("passWords", passWords.innerHTML);
-        window.scrollTo(0, body.scrollHeight);
+            userNameBox.classList.add("smthn")
+            passwordBox.classList.add("smthn")
+            webBox.classList.add("smthn", "last")
 
-        setTimeout(() => {
-            userName.value = ""
-            pass.value = ""
-            web.value = ""
-        }, 1);
+            localStorage.setItem("passWords", passWords.innerHTML);
+            window.scrollTo(0, body.scrollHeight);
+
+            setTimeout(() => {
+                userName.value = "";
+                pass.value = "";
+                web.value = "";
+            }, 1);
+        }
+
+        else {
+            alert("invalid website");
+        };
+
+        if (passValue.length < 12) {
+            alert("Your password is not secure! Make it longer than 8 characters");
+        };
     }
-    else{
-        alert("fill all first you IDIOT!!");
+    else {
+        alert("Fill all first you IDIOT!!");
     };
 });
 
-deleteBtn.addEventListener("click", ()=>{
+deleteBtn.addEventListener("click", () => {
     localStorage.clear();
     passWords.innerHTML = localStorage.getItem("passWords");
     setTimeout(() => {

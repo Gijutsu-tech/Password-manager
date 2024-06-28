@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mode Changer</title>
+<<<<<<< HEAD
+    <title>PassWord Manager</title>
+=======
+    <title>Password Manager</title>
+>>>>>>> 7754ee572b5b11140e9cbcb90d0d69a785f5f63f
     <link rel="stylesheet" href="style.css">
 
 
@@ -31,9 +35,9 @@
       </nav>
 
       <div class="container">
-        <input type="text" id="userName" placeholder="Enter your Username">
-        <input type="text" id="pass" placeholder="Enter your Password">
-        <input type="text" id="web" placeholder="Enter the website">
+        <input type="text" id="userName" placeholder="Enter your Username" autocomplete="off">
+        <input type="text" id="pass" placeholder="Enter your Password" autocomplete="off">
+        <input type="text" id="web" placeholder="Enter the website" autocomplete="off">
         <span>
 
           <button type="button" class="btn btn-primary px-3" id="submit">Submit</button>
@@ -44,7 +48,7 @@
         <div id="labels">
           <div class="label">Username</div>
           <div class="label">Password</div>
-          <div class="label">Website</div>
+          <div class="label last">Website</div>
         </div>
         <div id="passWords"></div>
       </div>
