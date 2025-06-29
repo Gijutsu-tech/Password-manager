@@ -46,49 +46,43 @@ submit.addEventListener("click", () => {
         let nameValue = userName.value;
         let passValue = pass.value;
         let webValue = web.value;
-
-        if (webValue.startsWith("www.") == true) {
-            let passDiv = document.createElement("div");
-            let userNameBox = document.createElement("div");
-            let passwordBox = document.createElement("div");
-            let webBox = document.createElement("div");
-
-            passDiv.classList.add("passDiv");
-
-            userNameBox.innerHTML = nameValue;
-            passwordBox.innerHTML = passValue;
-            webBox.innerHTML = webValue;
-
-            passBox.appendChild(passWords);
-            passWords.appendChild(passDiv);
-            passDiv.appendChild(userNameBox);
-            passDiv.appendChild(passwordBox);
-            passDiv.appendChild(webBox);
-
-            userNameBox.classList.add("smthn")
-            passwordBox.classList.add("smthn")
-            webBox.classList.add("smthn", "last")
-
-            localStorage.setItem("passWords", passWords.innerHTML);
-            window.scrollTo(0, body.scrollHeight);
-
-            setTimeout(() => {
-                userName.value = "";
-                pass.value = "";
-                web.value = "";
-            }, 1);
-        }
-
-        else {
-            alert("invalid website");
+        let passDiv = document.createElement("div");
+        let userNameBox = document.createElement("div");
+        let passwordBox = document.createElement("div");
+        let webBox = document.createElement("div");
+        
+        passDiv.classList.add("passDiv");
+        
+        userNameBox.innerHTML = nameValue;
+        passwordBox.innerHTML = passValue;
+        webBox.innerHTML = webValue;
+        
+        if (passValue.length < 8) {
+            alert("Your password is not secure! Adviced to make it longer than 8 characters");
         };
 
-        if (passValue.length < 12) {
-            alert("Your password is not secure! Make it longer than 8 characters");
-        };
+        passBox.appendChild(passWords);
+        passWords.appendChild(passDiv);
+        passDiv.appendChild(userNameBox);
+        passDiv.appendChild(passwordBox);
+        passDiv.appendChild(webBox);
+        
+        userNameBox.classList.add("smthn")
+        passwordBox.classList.add("smthn")
+        webBox.classList.add("smthn", "last")
+
+        localStorage.setItem("passWords", passWords.innerHTML);
+        window.scrollTo(0, body.scrollHeight);
+
+        setTimeout(() => {
+            userName.value = "";
+            pass.value = "";
+            web.value = "";
+        }, 1);
+
     }
     else {
-        alert("Fill all first you IDIOT!!");
+        alert("Fill all fields please!!");
     };
 });
 
